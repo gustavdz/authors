@@ -29,7 +29,7 @@ Los siguientes valores son necesarios tener en el archivo .env
 - MAIL_FROM_ADDRESS=<email_address>
 - MAIL_FROM_NAME="${APP_NAME}"
 
-##Steps to install
+## Steps to install
 
 Los pasos para instalar la aplicacion son los siguientes:
 
@@ -39,7 +39,7 @@ Los pasos para instalar la aplicacion son los siguientes:
 - Crear las tablas y poblarlas: **php artisan migrate:fresh --seed**
 - Instalar los keys de passport: **php artisan passport:install**
 
-##Considering if db is not created
+## Considering if db is not created
 
 Si al crear la base de datos da error el comando correr los siguientes comandos antes
 - php artisan config:cache
