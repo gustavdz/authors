@@ -30,6 +30,7 @@ Los siguientes valores son necesarios tener en el archivo .env
 - MAIL_FROM_NAME="${APP_NAME}"
 
 ##Steps to install
+
 Los pasos para instalar la aplicacion son los siguientes:
 
 - Instalar dependencias: **composer install**
@@ -39,6 +40,7 @@ Los pasos para instalar la aplicacion son los siguientes:
 - Instalar los keys de passport: **php artisan passport:install**
 
 ##Considering if db is not created
+
 Si al crear la base de datos da error el comando correr los siguientes comandos antes
 - php artisan config:cache
 - php artisan config:clear
