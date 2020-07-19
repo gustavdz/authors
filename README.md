@@ -4,17 +4,17 @@
 Los siguientes valores son necesarios tener en el archivo .env
 #### Database
 - DB_CONNECTION=mysql
-- DB_HOST=<host>
+- DB_HOST=<db_host>
 - DB_PORT=3306
 - DB_DATABASE=<db_name>
-- DB_USERNAME=<user>
-- DB_PASSWORD=<password>
+- DB_USERNAME=<db_user>
+- DB_PASSWORD=<db_password>
 
 #### APP
 
 - APP_URL=http://localhost:8000
 - APP_NAME="Authors & Books"
-- APP_KEY=<<key to be generated later>>
+- APP_KEY=<<key_to_be_generated_later>>
 
 #### Email
 
