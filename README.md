@@ -45,3 +45,7 @@ Si al crear la base de datos da error el comando correr los siguientes comandos 
 - php artisan config:cache
 - php artisan config:clear
 - php artisan cache:clear
+
+## Postman Collection to test
+El archivo de Postam Collection con los distintos endpoints es el siguiente:
+- authors_books.postman_collection.json

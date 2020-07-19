@@ -1,0 +1,616 @@
+{
+	"info": {
+		"_postman_id": "f5debefd-178c-44b5-9a15-1e608b2d91a8",
+		"name": "authors_books",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"display_name\":\"Gustavo Decker Z\",\n    \"username\":\"gustavo\",\n    \"email\":\"gustavo@deckasoft.com\",\n    \"password\":\"Gustavo123\",\n    \"password_confirmation\":\"Gustavo123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTRhNjkxNGUxZjdiNWIwM2IwMjRlOTVhZjU5MTdkMWI3ODM1MzQ3M2IxODYwZGE3NGY1MGFmOTM5NjViYjQ1MDAzNDBlYWZlNDY5ZmY1NmMiLCJpYXQiOjE1OTUxNDUwNjEsIm5iZiI6MTU5NTE0NTA2MSwiZXhwIjoxNTk1MTY2NjYwLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.DFqumDBsNx09TTvYInXsMyPoegJvOl14UWzuPfa0FZDsm6M71WYmtEaRFpQGB2UXYc0mNMRtlkWFslvqEgSmW0Gfx_jNr4Yst3zqo6Ti9uQpC-V78lTUVbHjrsL2kD7JGd75N608-GneOC4Oc4_yVU6PWxjQ8kVCwVnif5lynbZbtmTQOezyLxBNR55Fqu8Q_sjN4BvpktXJXf4RDJdjjvLeFF9IVK5DZEEf8Qj0z7SBjztLRLBofCXuC1Cu6TdvQDIGMau2Oo6I3W5UzWE8JcUczZbJ8etX6QkAVepuMjjYhgFutNoS1MQ3_VGS_yjTEdUxQ-7wMlZcfRXTArPRJ1nKzB3AvOVbv8goChdnuzcbfcigRUhosCZa-5KKRL-hnDawiqsLSwanGW2oKj3sFBUjFaitvbfgciwiUR6tnxXiEpZdLcujMp1FOCqF_neHOLH4YVOwaMAIzBMeBsGTLi4L7_lnCIg1ZUB_d_fz8CYhS5RokjLVk-Wo0lccpVBk1L9QnTwGu-JkHwV6AmsMfL3_ftC-Vf_s01PMjE0USg25AStY7IhihiFClNsTd1SuGMgkoMIFFGQaQj79wrNR3JKri4xPv677JWQEC5yVOHEMVz54dR4ivuTTqiD6Gvrlyi6TQsvhuk9AImBZihJVAH2FWyMFA8RkSFZTHSfDffo",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\":\"gustavo@deckasoft.com\",\n    \"password\":\"Gustavo123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "authors",
+			"item": [
+				{
+					"name": "List of authors",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzcwNTk4Nzk3ZjYxZTAwZDMxYWEzNGNiMTI3OTkzNjY5NDM3OTI1YjA4ZmIxNzg0ODdlMTQyYjdjNWU0MTYxMjFhN2ZjNzZmMGM3NjM1NDEiLCJpYXQiOjE1OTUxNDUwOTksIm5iZiI6MTU5NTE0NTA5OSwiZXhwIjoxNTk1MTY2Njk5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.28OYzbAs0bPVtiYJetfXj--tGQKtd7-rYUkhhKk8xI1hcPaVKZwt-x3qkfzqabMKq1temakAQIx5ud8OvCL4K9Gabz7J-2_QggvF4ixYYs8yALx4GlMd53D90WnFKaX2avIqD8z-AqUcaYJVfngwby_PcoK8KxYwTm_Smawc5lPIKLdCkbhh-PgRxr4N8z1bXVbW5YAnZxGp4rShjsvwY5hW4B6tGfbIC4I0-6wljqqY9uO51YF2aueOHjoLIGaPI4Z3cOwhDpuDD2gZB-UJ48ZHxdhCOVs0_oO9avRusKpkUDnB0wvjfRUuZNjKGQsurSjaKIi8srthIVNPthk_iXlkm5k5N19idAQyfej3bRhdSjXbzXxLUtjpXyAjt9IisLMi7UCaqSYEFwOTFEAwvHuVa19Ww8O9bTWMzeuaYbLmHM3J2Nf3_8oeRpdutpXq1lOiqBtjzU9uettXujuFoFncKVK_HFFclOC-V2CkSt4mUr2oN2X1Pm3Xgi3ph_LetnCHJV45wOGGgKY0ScfO-vhSz6gj1XpD1HfzdX10qAxrXugW6jsWlOqc0ih4-xJBMAjmr-h4ZwsOkwKtGj5RYkLWJsMG5Xhd0mi01l7EctdOQilzFjpC42iM9VgcLlklBeQrrEucVL-4CxOaWNF8AHgp8L7_vTbqcP2MFgYiyus",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/authors?search=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"authors"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get author",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzcwNTk4Nzk3ZjYxZTAwZDMxYWEzNGNiMTI3OTkzNjY5NDM3OTI1YjA4ZmIxNzg0ODdlMTQyYjdjNWU0MTYxMjFhN2ZjNzZmMGM3NjM1NDEiLCJpYXQiOjE1OTUxNDUwOTksIm5iZiI6MTU5NTE0NTA5OSwiZXhwIjoxNTk1MTY2Njk5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.28OYzbAs0bPVtiYJetfXj--tGQKtd7-rYUkhhKk8xI1hcPaVKZwt-x3qkfzqabMKq1temakAQIx5ud8OvCL4K9Gabz7J-2_QggvF4ixYYs8yALx4GlMd53D90WnFKaX2avIqD8z-AqUcaYJVfngwby_PcoK8KxYwTm_Smawc5lPIKLdCkbhh-PgRxr4N8z1bXVbW5YAnZxGp4rShjsvwY5hW4B6tGfbIC4I0-6wljqqY9uO51YF2aueOHjoLIGaPI4Z3cOwhDpuDD2gZB-UJ48ZHxdhCOVs0_oO9avRusKpkUDnB0wvjfRUuZNjKGQsurSjaKIi8srthIVNPthk_iXlkm5k5N19idAQyfej3bRhdSjXbzXxLUtjpXyAjt9IisLMi7UCaqSYEFwOTFEAwvHuVa19Ww8O9bTWMzeuaYbLmHM3J2Nf3_8oeRpdutpXq1lOiqBtjzU9uettXujuFoFncKVK_HFFclOC-V2CkSt4mUr2oN2X1Pm3Xgi3ph_LetnCHJV45wOGGgKY0ScfO-vhSz6gj1XpD1HfzdX10qAxrXugW6jsWlOqc0ih4-xJBMAjmr-h4ZwsOkwKtGj5RYkLWJsMG5Xhd0mi01l7EctdOQilzFjpC42iM9VgcLlklBeQrrEucVL-4CxOaWNF8AHgp8L7_vTbqcP2MFgYiyus",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/author/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"author",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create author",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiM2JhYTQzZDBlYjBhMjAyOTIzY2U5MWVjMTVkOThkNjY1YWE1MmQ2Yjk2ZTc0YjY2MGU0NDJhM2IyZjcwNzYzYTQ2ZmQ4NjBiZWQ3MDlhYWMiLCJpYXQiOjE1OTUxNzEyMTYsIm5iZiI6MTU5NTE3MTIxNiwiZXhwIjoxNTk1MTkyODE1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.cI6Ew1zgXlHVtHcQrmN5AWMfGZEMpL5OTt4IFVN9PkHheS_ThFlIpH8Z1OVlzYdYR886LF-mSlVJZ10_uPbhrp4UVaXmsyHW6buzAhH0Ct7M8ApAUaDxo5x0oi-5c5msj348yFWDr5AfIxslZO6BaZuKMHBI4MOg0I1d0VBk2xTYMm2bsYYP8BhDfrHsEVzTOOC8Fp_ds9B1sqAb6LZsSrH9q4Hq50GVIcg4pbBE8LRjg06Jo0uJve9UvSBDulKTpUMpzCxkIekK_FZMFMRSE1xopYvg1-bEuSRZvS66M811doVjKHtGVuuc2pYF1dpPNeDPiyDKrap77QRyWQWPNVk01dMN3RRKrGdIBJo9pwfdhtFr9BbKQEls30m9wL4KQ2rPzsVK9UqiJXDwIfqINu2odp7TBA3MwqkYWEK8GFHUdtdaPM4HNaFtp-lvgUpJ0tJokL5CUu-nkjWmRwOKM2Bom8Uk72HGTvWsELDjVXEAo4ZDa-t42fyMC3ZcBLtLcNc3kUneXD1WbuBCy4QR0qWbvcMGzNlcJsgyaKeBRCpf_fS_hOJansfmMUIcG88iolwhZ9gEOZHumgi63VkkeTbwVQVwMi3hLRMzxMnL2jdlknbr-Pjnl-TtrSzl1EB6LYo5Dp7t2et1fUR8Im1nw_lPIN4kyje_YYdWTcIPU40",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Francisco D\",\n    \"birthday\":\"1954-07-04\",\n    \"perish_date\":\"1999-11-24\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update author",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiM2JhYTQzZDBlYjBhMjAyOTIzY2U5MWVjMTVkOThkNjY1YWE1MmQ2Yjk2ZTc0YjY2MGU0NDJhM2IyZjcwNzYzYTQ2ZmQ4NjBiZWQ3MDlhYWMiLCJpYXQiOjE1OTUxNzEyMTYsIm5iZiI6MTU5NTE3MTIxNiwiZXhwIjoxNTk1MTkyODE1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.cI6Ew1zgXlHVtHcQrmN5AWMfGZEMpL5OTt4IFVN9PkHheS_ThFlIpH8Z1OVlzYdYR886LF-mSlVJZ10_uPbhrp4UVaXmsyHW6buzAhH0Ct7M8ApAUaDxo5x0oi-5c5msj348yFWDr5AfIxslZO6BaZuKMHBI4MOg0I1d0VBk2xTYMm2bsYYP8BhDfrHsEVzTOOC8Fp_ds9B1sqAb6LZsSrH9q4Hq50GVIcg4pbBE8LRjg06Jo0uJve9UvSBDulKTpUMpzCxkIekK_FZMFMRSE1xopYvg1-bEuSRZvS66M811doVjKHtGVuuc2pYF1dpPNeDPiyDKrap77QRyWQWPNVk01dMN3RRKrGdIBJo9pwfdhtFr9BbKQEls30m9wL4KQ2rPzsVK9UqiJXDwIfqINu2odp7TBA3MwqkYWEK8GFHUdtdaPM4HNaFtp-lvgUpJ0tJokL5CUu-nkjWmRwOKM2Bom8Uk72HGTvWsELDjVXEAo4ZDa-t42fyMC3ZcBLtLcNc3kUneXD1WbuBCy4QR0qWbvcMGzNlcJsgyaKeBRCpf_fS_hOJansfmMUIcG88iolwhZ9gEOZHumgi63VkkeTbwVQVwMi3hLRMzxMnL2jdlknbr-Pjnl-TtrSzl1EB6LYo5Dp7t2et1fUR8Im1nw_lPIN4kyje_YYdWTcIPU40",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Francisco DD\",\n    \"birthday\":\"1954-07-05\",\n    \"perish_date\":\"1999-11-23\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/author/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"author",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete author",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiM2JhYTQzZDBlYjBhMjAyOTIzY2U5MWVjMTVkOThkNjY1YWE1MmQ2Yjk2ZTc0YjY2MGU0NDJhM2IyZjcwNzYzYTQ2ZmQ4NjBiZWQ3MDlhYWMiLCJpYXQiOjE1OTUxNzEyMTYsIm5iZiI6MTU5NTE3MTIxNiwiZXhwIjoxNTk1MTkyODE1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.cI6Ew1zgXlHVtHcQrmN5AWMfGZEMpL5OTt4IFVN9PkHheS_ThFlIpH8Z1OVlzYdYR886LF-mSlVJZ10_uPbhrp4UVaXmsyHW6buzAhH0Ct7M8ApAUaDxo5x0oi-5c5msj348yFWDr5AfIxslZO6BaZuKMHBI4MOg0I1d0VBk2xTYMm2bsYYP8BhDfrHsEVzTOOC8Fp_ds9B1sqAb6LZsSrH9q4Hq50GVIcg4pbBE8LRjg06Jo0uJve9UvSBDulKTpUMpzCxkIekK_FZMFMRSE1xopYvg1-bEuSRZvS66M811doVjKHtGVuuc2pYF1dpPNeDPiyDKrap77QRyWQWPNVk01dMN3RRKrGdIBJo9pwfdhtFr9BbKQEls30m9wL4KQ2rPzsVK9UqiJXDwIfqINu2odp7TBA3MwqkYWEK8GFHUdtdaPM4HNaFtp-lvgUpJ0tJokL5CUu-nkjWmRwOKM2Bom8Uk72HGTvWsELDjVXEAo4ZDa-t42fyMC3ZcBLtLcNc3kUneXD1WbuBCy4QR0qWbvcMGzNlcJsgyaKeBRCpf_fS_hOJansfmMUIcG88iolwhZ9gEOZHumgi63VkkeTbwVQVwMi3hLRMzxMnL2jdlknbr-Pjnl-TtrSzl1EB6LYo5Dp7t2et1fUR8Im1nw_lPIN4kyje_YYdWTcIPU40",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Francisco DD\",\n    \"birthday\":\"1954-07-05\",\n    \"perish_date\":\"1999-11-23\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/author/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"author",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Write a book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMWQxNDhiYmIyNjAyZDZkNDI3NGRmMTgwODA1NjA5YjNmZjZiYjI4YmU0Nzc0ZjMyMDIwZjFlMDlkYjM2Y2QxYzMzYzYxNTExYTI1MjllOTUiLCJpYXQiOjE1OTUxNzgxMDksIm5iZiI6MTU5NTE3ODEwOSwiZXhwIjoxNTk1MTk5NzA5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.WY-zmKN_WXhxw8FobLytJRwi0H6JHKWkh-q28I7NlqWmWv-SQ0FV0FdU9muce8PWhce21oEuFu8YF0T2a7I5TsP2Zf8zSI_pVE04aWAg6RevM0IWWpE1Urdb8k0iW8rmh8H7TRPACRUlPbDVI_FY86JfJxOkkwqFDFlaMa--vjm-fcXvNe3CEGzXQGXIqwE1y1ok5Y2Evc2mH7zjF6KY97tMLmb5gGvLxrphxpTnMDIRwJwMsU0-ZuNRW_LKkFHHRgSpkD99R4N2zetASyOUfV974N5kpI3P2QcF03raRdALV7QZzibKi0YbgjZ842xuTufojbgnl_hh1OLEaE1W15q34NZ09ANNc1lXQBWjZxN46LI_CXy2b52ROGeu8u9CNJavve3ey-xYKVRvknSpjnN8CR5QnXV5bkQknRerGYS_WErnHEWWUFYJ5sCgBKB5CJWyq0301u-wwfC9HGrh5wHZNutZB9LSAKiE2qda7O973XnaLXE0wNvS4XUd7dnGNnCoRGmeEH5D7Ah_TBLW20do1xjENMrOAi3x_d_u62Qkr24e2KLTJ42A8_R8xjru8MoShmKt8gLrmBU76fbqeFcp-DvuosKIiEVnsjFgBFMB80adAYAqlKE-LXC-NUmrSdofHfAIMMShHf7j4tQrbMDa7zPUKxwbb82AQxHI0Dw",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Simple 2\",\n    \"author_id\":\"1\",\n    \"book_id\":\"3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/author/publish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"author",
+								"publish"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "List of books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzcwNTk4Nzk3ZjYxZTAwZDMxYWEzNGNiMTI3OTkzNjY5NDM3OTI1YjA4ZmIxNzg0ODdlMTQyYjdjNWU0MTYxMjFhN2ZjNzZmMGM3NjM1NDEiLCJpYXQiOjE1OTUxNDUwOTksIm5iZiI6MTU5NTE0NTA5OSwiZXhwIjoxNTk1MTY2Njk5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.28OYzbAs0bPVtiYJetfXj--tGQKtd7-rYUkhhKk8xI1hcPaVKZwt-x3qkfzqabMKq1temakAQIx5ud8OvCL4K9Gabz7J-2_QggvF4ixYYs8yALx4GlMd53D90WnFKaX2avIqD8z-AqUcaYJVfngwby_PcoK8KxYwTm_Smawc5lPIKLdCkbhh-PgRxr4N8z1bXVbW5YAnZxGp4rShjsvwY5hW4B6tGfbIC4I0-6wljqqY9uO51YF2aueOHjoLIGaPI4Z3cOwhDpuDD2gZB-UJ48ZHxdhCOVs0_oO9avRusKpkUDnB0wvjfRUuZNjKGQsurSjaKIi8srthIVNPthk_iXlkm5k5N19idAQyfej3bRhdSjXbzXxLUtjpXyAjt9IisLMi7UCaqSYEFwOTFEAwvHuVa19Ww8O9bTWMzeuaYbLmHM3J2Nf3_8oeRpdutpXq1lOiqBtjzU9uettXujuFoFncKVK_HFFclOC-V2CkSt4mUr2oN2X1Pm3Xgi3ph_LetnCHJV45wOGGgKY0ScfO-vhSz6gj1XpD1HfzdX10qAxrXugW6jsWlOqc0ih4-xJBMAjmr-h4ZwsOkwKtGj5RYkLWJsMG5Xhd0mi01l7EctdOQilzFjpC42iM9VgcLlklBeQrrEucVL-4CxOaWNF8AHgp8L7_vTbqcP2MFgYiyus",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/books?search=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"books"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzcwNTk4Nzk3ZjYxZTAwZDMxYWEzNGNiMTI3OTkzNjY5NDM3OTI1YjA4ZmIxNzg0ODdlMTQyYjdjNWU0MTYxMjFhN2ZjNzZmMGM3NjM1NDEiLCJpYXQiOjE1OTUxNDUwOTksIm5iZiI6MTU5NTE0NTA5OSwiZXhwIjoxNTk1MTY2Njk5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.28OYzbAs0bPVtiYJetfXj--tGQKtd7-rYUkhhKk8xI1hcPaVKZwt-x3qkfzqabMKq1temakAQIx5ud8OvCL4K9Gabz7J-2_QggvF4ixYYs8yALx4GlMd53D90WnFKaX2avIqD8z-AqUcaYJVfngwby_PcoK8KxYwTm_Smawc5lPIKLdCkbhh-PgRxr4N8z1bXVbW5YAnZxGp4rShjsvwY5hW4B6tGfbIC4I0-6wljqqY9uO51YF2aueOHjoLIGaPI4Z3cOwhDpuDD2gZB-UJ48ZHxdhCOVs0_oO9avRusKpkUDnB0wvjfRUuZNjKGQsurSjaKIi8srthIVNPthk_iXlkm5k5N19idAQyfej3bRhdSjXbzXxLUtjpXyAjt9IisLMi7UCaqSYEFwOTFEAwvHuVa19Ww8O9bTWMzeuaYbLmHM3J2Nf3_8oeRpdutpXq1lOiqBtjzU9uettXujuFoFncKVK_HFFclOC-V2CkSt4mUr2oN2X1Pm3Xgi3ph_LetnCHJV45wOGGgKY0ScfO-vhSz6gj1XpD1HfzdX10qAxrXugW6jsWlOqc0ih4-xJBMAjmr-h4ZwsOkwKtGj5RYkLWJsMG5Xhd0mi01l7EctdOQilzFjpC42iM9VgcLlklBeQrrEucVL-4CxOaWNF8AHgp8L7_vTbqcP2MFgYiyus",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/book/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"book",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMWQxNDhiYmIyNjAyZDZkNDI3NGRmMTgwODA1NjA5YjNmZjZiYjI4YmU0Nzc0ZjMyMDIwZjFlMDlkYjM2Y2QxYzMzYzYxNTExYTI1MjllOTUiLCJpYXQiOjE1OTUxNzgxMDksIm5iZiI6MTU5NTE3ODEwOSwiZXhwIjoxNTk1MTk5NzA5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.WY-zmKN_WXhxw8FobLytJRwi0H6JHKWkh-q28I7NlqWmWv-SQ0FV0FdU9muce8PWhce21oEuFu8YF0T2a7I5TsP2Zf8zSI_pVE04aWAg6RevM0IWWpE1Urdb8k0iW8rmh8H7TRPACRUlPbDVI_FY86JfJxOkkwqFDFlaMa--vjm-fcXvNe3CEGzXQGXIqwE1y1ok5Y2Evc2mH7zjF6KY97tMLmb5gGvLxrphxpTnMDIRwJwMsU0-ZuNRW_LKkFHHRgSpkD99R4N2zetASyOUfV974N5kpI3P2QcF03raRdALV7QZzibKi0YbgjZ842xuTufojbgnl_hh1OLEaE1W15q34NZ09ANNc1lXQBWjZxN46LI_CXy2b52ROGeu8u9CNJavve3ey-xYKVRvknSpjnN8CR5QnXV5bkQknRerGYS_WErnHEWWUFYJ5sCgBKB5CJWyq0301u-wwfC9HGrh5wHZNutZB9LSAKiE2qda7O973XnaLXE0wNvS4XUd7dnGNnCoRGmeEH5D7Ah_TBLW20do1xjENMrOAi3x_d_u62Qkr24e2KLTJ42A8_R8xjru8MoShmKt8gLrmBU76fbqeFcp-DvuosKIiEVnsjFgBFMB80adAYAqlKE-LXC-NUmrSdofHfAIMMShHf7j4tQrbMDa7zPUKxwbb82AQxHI0Dw",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Prueba de Laravel parte 3\",\n    \"isbn\":\"1954\",\n    \"borrowed_at\":\"2020-07-01 10:01:37\",\n    \"borrowed_to\":\"Angel\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update book",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiM2JhYTQzZDBlYjBhMjAyOTIzY2U5MWVjMTVkOThkNjY1YWE1MmQ2Yjk2ZTc0YjY2MGU0NDJhM2IyZjcwNzYzYTQ2ZmQ4NjBiZWQ3MDlhYWMiLCJpYXQiOjE1OTUxNzEyMTYsIm5iZiI6MTU5NTE3MTIxNiwiZXhwIjoxNTk1MTkyODE1LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.cI6Ew1zgXlHVtHcQrmN5AWMfGZEMpL5OTt4IFVN9PkHheS_ThFlIpH8Z1OVlzYdYR886LF-mSlVJZ10_uPbhrp4UVaXmsyHW6buzAhH0Ct7M8ApAUaDxo5x0oi-5c5msj348yFWDr5AfIxslZO6BaZuKMHBI4MOg0I1d0VBk2xTYMm2bsYYP8BhDfrHsEVzTOOC8Fp_ds9B1sqAb6LZsSrH9q4Hq50GVIcg4pbBE8LRjg06Jo0uJve9UvSBDulKTpUMpzCxkIekK_FZMFMRSE1xopYvg1-bEuSRZvS66M811doVjKHtGVuuc2pYF1dpPNeDPiyDKrap77QRyWQWPNVk01dMN3RRKrGdIBJo9pwfdhtFr9BbKQEls30m9wL4KQ2rPzsVK9UqiJXDwIfqINu2odp7TBA3MwqkYWEK8GFHUdtdaPM4HNaFtp-lvgUpJ0tJokL5CUu-nkjWmRwOKM2Bom8Uk72HGTvWsELDjVXEAo4ZDa-t42fyMC3ZcBLtLcNc3kUneXD1WbuBCy4QR0qWbvcMGzNlcJsgyaKeBRCpf_fS_hOJansfmMUIcG88iolwhZ9gEOZHumgi63VkkeTbwVQVwMi3hLRMzxMnL2jdlknbr-Pjnl-TtrSzl1EB6LYo5Dp7t2et1fUR8Im1nw_lPIN4kyje_YYdWTcIPU40",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Prueba de Laravel parte III\",\n    \"isbn\":\"19543\",\n    \"borrowed_at\":\"2020-07-01 10:33:37\",\n    \"borrowed_to\":\"Angel Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/book/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"book",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete book",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMWQxNDhiYmIyNjAyZDZkNDI3NGRmMTgwODA1NjA5YjNmZjZiYjI4YmU0Nzc0ZjMyMDIwZjFlMDlkYjM2Y2QxYzMzYzYxNTExYTI1MjllOTUiLCJpYXQiOjE1OTUxNzgxMDksIm5iZiI6MTU5NTE3ODEwOSwiZXhwIjoxNTk1MTk5NzA5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.WY-zmKN_WXhxw8FobLytJRwi0H6JHKWkh-q28I7NlqWmWv-SQ0FV0FdU9muce8PWhce21oEuFu8YF0T2a7I5TsP2Zf8zSI_pVE04aWAg6RevM0IWWpE1Urdb8k0iW8rmh8H7TRPACRUlPbDVI_FY86JfJxOkkwqFDFlaMa--vjm-fcXvNe3CEGzXQGXIqwE1y1ok5Y2Evc2mH7zjF6KY97tMLmb5gGvLxrphxpTnMDIRwJwMsU0-ZuNRW_LKkFHHRgSpkD99R4N2zetASyOUfV974N5kpI3P2QcF03raRdALV7QZzibKi0YbgjZ842xuTufojbgnl_hh1OLEaE1W15q34NZ09ANNc1lXQBWjZxN46LI_CXy2b52ROGeu8u9CNJavve3ey-xYKVRvknSpjnN8CR5QnXV5bkQknRerGYS_WErnHEWWUFYJ5sCgBKB5CJWyq0301u-wwfC9HGrh5wHZNutZB9LSAKiE2qda7O973XnaLXE0wNvS4XUd7dnGNnCoRGmeEH5D7Ah_TBLW20do1xjENMrOAi3x_d_u62Qkr24e2KLTJ42A8_R8xjru8MoShmKt8gLrmBU76fbqeFcp-DvuosKIiEVnsjFgBFMB80adAYAqlKE-LXC-NUmrSdofHfAIMMShHf7j4tQrbMDa7zPUKxwbb82AQxHI0Dw",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Prueba de Laravel parte III\",\n    \"isbn\":\"19543\",\n    \"borrowed_at\":\"2020-07-01 10:33:37\",\n    \"borrowed_to\":\"Angel Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/book/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"book",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrow a book",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMWQxNDhiYmIyNjAyZDZkNDI3NGRmMTgwODA1NjA5YjNmZjZiYjI4YmU0Nzc0ZjMyMDIwZjFlMDlkYjM2Y2QxYzMzYzYxNTExYTI1MjllOTUiLCJpYXQiOjE1OTUxNzgxMDksIm5iZiI6MTU5NTE3ODEwOSwiZXhwIjoxNTk1MTk5NzA5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.WY-zmKN_WXhxw8FobLytJRwi0H6JHKWkh-q28I7NlqWmWv-SQ0FV0FdU9muce8PWhce21oEuFu8YF0T2a7I5TsP2Zf8zSI_pVE04aWAg6RevM0IWWpE1Urdb8k0iW8rmh8H7TRPACRUlPbDVI_FY86JfJxOkkwqFDFlaMa--vjm-fcXvNe3CEGzXQGXIqwE1y1ok5Y2Evc2mH7zjF6KY97tMLmb5gGvLxrphxpTnMDIRwJwMsU0-ZuNRW_LKkFHHRgSpkD99R4N2zetASyOUfV974N5kpI3P2QcF03raRdALV7QZzibKi0YbgjZ842xuTufojbgnl_hh1OLEaE1W15q34NZ09ANNc1lXQBWjZxN46LI_CXy2b52ROGeu8u9CNJavve3ey-xYKVRvknSpjnN8CR5QnXV5bkQknRerGYS_WErnHEWWUFYJ5sCgBKB5CJWyq0301u-wwfC9HGrh5wHZNutZB9LSAKiE2qda7O973XnaLXE0wNvS4XUd7dnGNnCoRGmeEH5D7Ah_TBLW20do1xjENMrOAi3x_d_u62Qkr24e2KLTJ42A8_R8xjru8MoShmKt8gLrmBU76fbqeFcp-DvuosKIiEVnsjFgBFMB80adAYAqlKE-LXC-NUmrSdofHfAIMMShHf7j4tQrbMDa7zPUKxwbb82AQxHI0Dw",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"borrowed_to\":\"Andres\",\n    \"borrowed_at\":\"2020-07-18 10:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/book/4/borrow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"book",
+								"4",
+								"borrow"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
